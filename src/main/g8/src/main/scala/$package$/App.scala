@@ -3,7 +3,6 @@ package $package$
 import akka.actor.ActorSystem
 import akka.stream.ActorMaterializer
 import akka.http.scaladsl.Http
-import akka.http.scaladsl.server.Directives._
 
 import com.typesafe.config.ConfigFactory
 
@@ -18,7 +17,7 @@ object Main {
   private val httpPort = config.getInt("http.port")
   private val httpHost = config.getString("http.host")
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
 
     // init akka
     implicit val actorSystem = ActorSystem("places_service")
